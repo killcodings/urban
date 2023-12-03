@@ -1,0 +1,24 @@
+.tabs-control {
+  background-color: #d9d9d9;
+  margin: 0 auto;
+  width: max-content;
+  border-radius: 8px;
+  padding: 5px;
+
+  &__item {
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 17px 43px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    background: #d9d9d9;
+    color: var(--accent-color, #0073d9);
+
+    &_active {
+      background: #fff;
+      color: #000;
+    }
+  }
+}

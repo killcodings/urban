@@ -1,0 +1,83 @@
+.wp-block-buttons {}
+
+.wp-block-button {
+  $this: &;
+
+  &__width-25 {
+    .wp-block-button__link {
+      width: 25%;
+    }
+  }
+
+  &__width-50 {
+    #{$this}__link {
+      width: 50%;
+    }
+  }
+
+  &__width-75 {
+    #{$this}__link {
+      width: 75%;
+    }
+  }
+
+  &__width-100 {
+    #{$this}__link {
+      width: 100%;
+    }
+  }
+
+  &.is-style-fill {
+    #{$this}__link {
+      color: var(--buttons-color);
+      background-color: var(--buttons-background);
+      border: 1px var(--buttons-border-style) var(--buttons-border);
+
+      &:hover, &:focus {
+        color: var(--buttons-color-hover);
+        background-color: var(--buttons-background-hover);
+        border: 1px var(--buttons-border-style) var(--buttons-border-hover);
+      }
+    }
+  }
+
+  &.is-style-outline {
+    #{$this}__link {
+      background-color: unset;
+      color: var(--buttons-color);
+      border: 1px var(--buttons-border-style) var(--buttons-border);
+
+      &:hover, &:focus {
+        background-color: unset;
+        color: var(--buttons-color-hover);
+        border: 1px var(--buttons-border-style) var(--buttons-border-hover);
+      }
+    }
+  }
+
+  &__link {
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 1rem;
+    border-radius: var(--buttons-border-radius);
+    min-width: calc(175px - 2rem);
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    transition: 250ms all;
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif;
+    border: none;
+
+    color: var(--buttons-color);
+    background-color: var(--buttons-background);
+    border: 1px var(--buttons-border-style) var(--buttons-border);
+
+    &:hover, &:focus {
+      color: var(--buttons-color-hover);
+      background-color: var(--buttons-background-hover);
+      border: 1px var(--buttons-border-style) var(--buttons-border-hover);
+    }
+  }
+}
+

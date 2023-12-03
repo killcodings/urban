@@ -1,0 +1,35 @@
+@use "../base/colors" as *;
+@use "../fonts" as *;
+
+.newhighlights {
+  list-style: none;
+  padding: 0;
+
+  & > *:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
+  &__item {
+    @include text-sm-regular;
+    color: $black;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+
+    &::before {
+      content: "\e803";
+      font-family: "fontello";
+      position: relative;
+      top: 2px;
+      display: block;
+      width: 17px;
+      height: 17px;
+      font-size: 10px;
+      text-align: center;
+      line-height: 17px;
+      background: var(--bg, $white);
+      color: var(--color, $primary-600);
+      border-radius: 50%;
+    }
+  }
+}

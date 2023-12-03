@@ -1,0 +1,139 @@
+@use "src/scss/base/colors" as *;
+@use "src/scss/base/breakpoints" as *;
+@use "src/scss/fonts" as *;
+
+@mixin welcome-bonus-large($self) {
+  gap: 12px;
+
+  #{$self}__icon {
+    //flex: 0 0 64px;
+    width: 64px;
+    aspect-ratio: 1/1;
+    background-size: 24px;
+  }
+
+  #{$self}__text {
+    color: $black;
+    font-weight: 600;
+  }
+}
+
+@mixin welcome-bonus-small($self) {
+  gap: 16px;
+
+  #{$self}__icon {
+    width: 44px;
+    //flex: 0 0 44px;
+    aspect-ratio: 1/1;
+    background-size: 16px;
+  }
+
+  #{$self}__text {
+    color: $gray-700;
+  }
+}
+
+@mixin welcome-bonus-gray($self) {
+  background-color: $gray-100;
+
+  #{$self}__icon {
+    background-color: #fff;
+  }
+}
+
+@mixin welcome-bonus-white($self) {
+  background-color: #fff;
+
+  #{$self}__icon {
+    background-color: $gray-100;
+  }
+}
+
+.welcome-bonus {
+  $self: &;
+  padding: 16px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  max-width: 450px;
+
+  > svg {
+    margin-right: 5px;
+  }
+
+  &_gray {
+    @include welcome-bonus-gray($self);
+  }
+
+  &_white {
+    @include welcome-bonus-white($self);
+  }
+
+  &_small {
+    @include welcome-bonus-small($self);
+  }
+
+  &_large {
+    @include welcome-bonus-large($self);
+  }
+
+  &_responsive {
+    @include welcome-bonus-small($self);
+
+    @media (min-width: $tablet) {
+      @include welcome-bonus-large($self);
+    }
+  }
+
+  &_button {
+
+    #{$self}__button {
+      margin-left: auto;
+    }
+  }
+}
+
+.welcome-bonus__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: url("../images/design/gift.svg") no-repeat center center;
+
+  &_no-icon {
+    background: var(--bg) !important;
+    padding: 6px;
+  }
+}
+
+.welcome-bonus__text {
+  @include text-sm-medium;
+
+  &_double {
+    display: flex;
+    flex-direction: column;
+
+    span {
+      @include display-sm-semibold;
+    }
+  }
+
+  &_single {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0 12px;
+
+    span {
+      @include display-sm-semibold;
+    }
+
+    @media (max-width: $tablet) {
+      display: block;
+
+      span {
+        @include text-sm-medium;
+      }
+    }
+  }
+}

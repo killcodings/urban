@@ -1,0 +1,42 @@
+@use "../base/colors" as *;
+@use "../fonts" as *;
+@use "../brand-logo-rating/brand-logo-rating";
+@use "../newhighlights/newhighlights";
+
+.brand-widget {
+  padding: 0 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background-color: #fff;
+  border-radius: 16px;
+
+  &__title {
+    padding: 16px 22px;
+    align-self: center;
+    background-color: var(--bg, $primary-600);
+    border-radius: 0 0 8px 8px;
+    @include text-xs-regular;
+    color: var(--color, $white);
+    text-align: center;
+  }
+
+  &__subtitle {
+    @include text-md-medium;
+    color: $black;
+    text-align: left;
+  }
+
+  &__button {
+    width: 100%;
+    background-color: var(--bg, $primary-600);
+    color: var(--color, $white);
+    border: 1px solid var(--bg, $primary-600);
+
+    &:hover, &:active, &:focus {
+      background-color: var(--color, $primary-600);
+      color: var(--bg, $white);
+      border: 1px solid var(--color, $primary-600);
+    }
+  }
+}

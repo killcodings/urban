@@ -1,0 +1,225 @@
+{
+    "key": "group_63e4dd595aacf",
+    "title": "Статистика рейтинга",
+    "fields": [
+        {
+            "key": "field_63e4dd76f1ec0",
+            "label": "Средний рейтинг",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_63e5021b576fb",
+            "label": "Средний рейтинг",
+            "name": "reviews-rating-heading",
+            "aria-label": "",
+            "type": "range",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 5,
+            "min": 1,
+            "max": 5,
+            "step": "0.1",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_63e50ff47b82c",
+            "label": "Total",
+            "name": "reviews-rating-total",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "10",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 100,
+            "min": 1,
+            "max": 1000,
+            "placeholder": "",
+            "step": "0.1",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_63e502c392ecd",
+            "label": "Stars",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_63e502d992ece",
+            "label": "Stars value",
+            "name": "labels",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_63e5032692ecf",
+                    "label": "5-star",
+                    "name": "label-bar-value-5",
+                    "aria-label": "",
+                    "type": "range",
+                    "instructions": "0 - 100%",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": 50,
+                    "min": 0,
+                    "max": 100,
+                    "step": 1,
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_63e5040c92ed0",
+                    "label": "4-star",
+                    "name": "label-bar-value-4",
+                    "aria-label": "",
+                    "type": "range",
+                    "instructions": "0 - 100%",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": 50,
+                    "min": 0,
+                    "max": 100,
+                    "step": 1,
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_63e504e392ed1",
+                    "label": "3-star",
+                    "name": "label-bar-value-3",
+                    "aria-label": "",
+                    "type": "range",
+                    "instructions": "0 - 100%",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": 50,
+                    "min": 0,
+                    "max": 100,
+                    "step": 1,
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_63e5050992ed2",
+                    "label": "2-star",
+                    "name": "label-bar-value-2",
+                    "aria-label": "",
+                    "type": "range",
+                    "instructions": "0 - 100%",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": 50,
+                    "min": 0,
+                    "max": 100,
+                    "step": 1,
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_63e5051992ed3",
+                    "label": "1-star",
+                    "name": "label-bar-value-1",
+                    "aria-label": "",
+                    "type": "range",
+                    "instructions": "0 - 100%",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": 50,
+                    "min": 0,
+                    "max": 100,
+                    "step": 1,
+                    "prepend": "",
+                    "append": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/reviews-rating"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1675956512
+}

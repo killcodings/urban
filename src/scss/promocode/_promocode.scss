@@ -1,0 +1,126 @@
+@use "../base/colors" as *;
+@use "../base/breakpoints" as *;
+@use "../fonts" as *;
+@use "../bonuses/welcome-bonus";
+
+@mixin promocode-white($self) {
+  background-color: #fff;
+
+  #{$self}__icon {
+    background-color: $gray-100;
+  }
+}
+@mixin promocode-gray($self) {
+  background-color: $gray-100;
+
+  #{$self}__icon {
+    background-color: #fff;
+  }
+}
+
+@mixin promocode-transparent($self) {
+  background-color: transparent;
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='16' ry='16' stroke='%239698A2B3' stroke-width='2' stroke-dasharray='10' stroke-dashoffset='9' stroke-linecap='square'/%3e%3c/svg%3e");
+  border-radius: 16px;
+
+  #{$self}__icon {
+    background-color: #fff;
+  }
+}
+
+@mixin promocode-large($self) {
+  #{$self}__title {
+    @include text-sm-medium;
+    color: $gray-400;
+    margin-bottom: 4px;
+  }
+
+  #{$self}__value {
+    @include display-sm-semibold;
+    color: $gray-700;
+  }
+
+  #{$self}__icon {
+    width: 64px;
+    //flex: 0 0 64px;
+    background-size: 19px;
+  }
+}
+
+@mixin promocode-small($self) {
+  #{$self}__title {
+    @include text-sm-medium;
+    color: $gray-400;
+  }
+
+  #{$self}__value {
+    @include text-sm-medium;
+    color: $gray-700;
+  }
+
+  #{$self}__icon {
+    width: 44px;
+    //flex: 0 0 44px;
+    background-size: 14px;
+  }
+}
+
+.promocode {
+  $self: &;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-radius: 16px;
+
+  &_white {
+    @include promocode-white($self);
+  }
+  &_gray {
+    @include promocode-gray($self);
+  }
+
+  &_transparent {
+    @include promocode-transparent($self);
+  }
+
+  &_large {
+    @include promocode-large($self);
+  }
+
+  &_small {
+    @include promocode-small($self);
+  }
+
+  &_responsive {
+    @include promocode-small($self);
+
+    @media (min-width: $tablet) {
+      @include promocode-large($self);
+    }
+  }
+
+  &__icon {
+    background: url('../images/design/persent.svg') no-repeat center center;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+  }
+
+  &__button {
+    margin-left: auto;
+  }
+}
+
+.version_2 {
+  max-width: 450px;
+
+  .promocode {
+    margin-top: 10px;
+  }
+
+  &.custom-color {
+    .welcome-bonus__text, .promocode__title, .promocode__value {
+      color: var(--color-promocode);
+    }
+  }
+}

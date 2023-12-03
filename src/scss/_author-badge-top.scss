@@ -1,0 +1,81 @@
+.author-badge-top {
+  margin: 1.5rem 0;
+  max-width: 590px;
+
+  &__title {
+    margin: 0 0 16px 0;
+    color: #000;
+    font-family: Arial;
+    font-size: 1.375rem;
+    font-weight: 600;
+    line-height: 1.875rem;
+
+    @media (max-width: 550px) {
+      font-size: 24px;
+    }
+  }
+
+  &__card {
+    padding: 16px;
+    display: grid;
+    grid-template-columns: min-content auto;
+    grid-column-gap: 16px;
+    border-radius: 16px;
+    background: #F1F1F1;
+    max-width: fit-content;
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+
+    &:hover,
+    &:focus {
+      box-shadow: 0 0 5px rgb(0 0 0 / 0.1);
+    }
+  }
+
+  &__avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    row-gap: 4px;
+  }
+
+  &__name {
+    color: #000;
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 28px;
+    margin: 0;
+  }
+
+  &__description {
+    color: #000;
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    margin: 0;
+  }
+
+  &__link {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+}

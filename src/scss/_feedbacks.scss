@@ -1,0 +1,50 @@
+.container.feedback {
+  display: flex;
+  flex-direction: column;
+
+  .comment-form {
+    order: 2;
+  }
+  .comments {
+    order: 1;
+  }
+}
+
+.feedback-form {
+  display: flex;
+  flex-basis: 100%;
+  margin: 0;
+  position: relative;
+
+  &__review {
+    flex-basis: 50%;
+
+    &-title {
+      width: calc(100% - 2rem);
+      margin: 1rem;
+      padding-left: 10px;
+      font-size: 1rem;
+      font-weight: 600;
+      font-family: "Montserrat", sans-serif;
+    }
+  }
+
+  .rating {
+    right: 1rem;
+    flex-basis: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 1rem;
+  }
+
+  &__button {
+    margin: 1rem;
+    border-radius: 0;
+    appearance: none;
+  }
+
+  &__input {
+    width: calc(100% - 2rem);
+  }
+}

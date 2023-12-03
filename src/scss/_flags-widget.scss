@@ -1,0 +1,48 @@
+.flags-widget {
+  $this: &;
+  display: flex;
+  justify-content: center;
+
+  .wpml-ls-sidebars-language-flags {
+    padding: unset !important;
+  }
+
+  @media (max-width: 1000px) {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+
+  &__custom {
+    position: relative;
+    top: 0;
+    transform: none;
+    right: 0 !important;
+    margin-bottom: 10px;
+    margin: 1rem;
+    width: 100%;
+    justify-content: flex-start;
+
+    #{$this}__list {
+      display: flex;
+      gap: 18px;
+    }
+
+    #{$this}__icon {
+      width: 22px;
+      height: 12px;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+}
+
+.widget-language-link {
+  display: flex;
+  @media (max-width: 1000px) {
+    display: none;
+  }
+   &__item:not(:last-of-type) {
+     margin-right: 1.5rem;
+   }
+}

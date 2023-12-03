@@ -1,0 +1,38 @@
+
+.native-slider {
+
+  .slide {
+    transition: all .3s;
+  }
+
+
+  &__buttons {
+    display: flex;
+    margin-left: auto;
+  }
+
+  &__prev, &__next {
+    font-size: 40px;
+    line-height: normal;
+    cursor: pointer;
+  }
+
+  .dashicons {
+    &:before {
+      color:#BBBBBB;
+    }
+  }
+
+
+  &__prev {
+    margin-right: 10px;
+  }
+
+  &__next {
+    &.active {
+      &:before {
+        color:#000;
+      }
+    }
+  }
+}

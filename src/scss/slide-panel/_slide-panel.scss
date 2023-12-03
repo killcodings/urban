@@ -1,0 +1,129 @@
+@use "src/scss/base/colors" as *;
+@use "src/scss/fonts" as *;
+@use "../brand-widget/brand-widget";
+@use "../bonuses/welcome-bonus";
+@use "../promocode/promocode";
+
+@mixin slide-panel-mobile($self) {
+  padding: 8px;
+  gap: 8px;
+
+  #{$self}__button {
+    padding: 12px 23px;
+    white-space: nowrap;
+    color: transparent;
+    background-image: url('../images/design/arrow-white.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  #{$self}__brand {
+    gap: 6px;
+  }
+}
+
+@mixin slide-panel-custom($self) {
+  background-color: var(--bg);
+  color: var(--color);
+
+  #{$self}__bonus, .welcome-bonus__text {
+    color: var(--color) !important;
+  }
+
+  .brand-logo-rating {
+
+    &__name, &__value {
+      color: var(--color);
+    }
+
+    &__icons {
+      background: linear-gradient(90deg, var(--color) var(--percent), $gray-300 var(--end-gradient));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  #{$self}__button {
+    background-color: var(--button-bg);
+    border: 1px solid var(--button-bg);
+    color: var(--button-color);
+  }
+}
+
+@mixin slide-panel-bonus($self) {
+
+  #{$self}__bonus {
+    @include text-sm-medium;
+    color: $gray-700;
+  }
+}
+
+@mixin slide-panel-desktop($self) {
+  padding: 12px;
+  gap: 32px;
+
+  & > * {
+    flex: 1 1;
+  }
+
+  .welcome-bonus, .promocode {
+    padding: 0;
+
+    &__icon {
+      background-color: $white;
+      display: none;
+
+      @media (min-width: 1080px) {
+        display: block;
+      }
+    }
+
+    &__text, &__content {
+      @include text-sm-medium;
+
+      b, strong {
+        display: block;
+        @include display-sm-semibold;
+      }
+    }
+  }
+
+  #{$self}__button {
+    max-width: 260px;
+  }
+}
+
+.slide-panel {
+  $self: &;
+  background-color: $gray-100;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  z-index: 99999;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 1230px;
+  width: calc(100% - 20px);
+
+  &_mobile {
+    @include slide-panel-mobile($self);
+  }
+
+  &_desktop {
+    @include slide-panel-desktop($self);
+  }
+
+  &_bonus {
+    @include slide-panel-bonus($self);
+  }
+
+  &_custom {
+    @include slide-panel-custom($self);
+  }
+
+  &__button {
+    margin-left: auto;
+  }
+}

@@ -1,0 +1,112 @@
+{
+    "key": "group_623c4bca53b95",
+    "title": "Настройка бонусов",
+    "fields": [
+        {
+            "key": "field_653a1af7b437e",
+            "label": "Предустановленные шорткоды",
+            "name": "",
+            "aria-label": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 1,
+            "message": "[month] = Текущий месяц",
+            "new_lines": "",
+            "esc_html": 0
+        },
+        {
+            "key": "field_623c4cffa8872",
+            "label": "Добавить бонус",
+            "name": "bonus",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "Add Row",
+            "wpml_cf_preferences": 0,
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_623c4d0ea8873",
+                    "label": "Ключ для бонуса",
+                    "name": "key",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Вводить латиницей без_пробелов (использовать нижнее подчеркивание).\r\nДля вывода на странице нужно написать: [ярлык_для_бонуса] .",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "wpml_cf_preferences": 0,
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "[",
+                    "append": "]",
+                    "maxlength": "",
+                    "parent_repeater": "field_623c4cffa8872"
+                },
+                {
+                    "key": "field_623c4d2ca8874",
+                    "label": "Значение бонуса",
+                    "name": "value",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "wpml_cf_preferences": 0,
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "parent_repeater": "field_623c4cffa8872"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "bonus-settings"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1698306863
+}

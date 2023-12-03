@@ -1,0 +1,151 @@
+@use "../base/colors" as *;
+@use "../base/breakpoints" as *;
+@use "../fonts" as *;
+
+@mixin brand-logo-rating-large($self) {
+  gap: 24px;
+
+  #{$self}__logo {
+    width: 96px;
+    aspect-ratio: 1/1;
+  }
+
+  #{$self}__name {
+    @include display-xs-semibold;
+    margin-bottom: 8px;
+  }
+
+  #{$self}__subtitle {
+    @include text-xs-regular;
+    color: $gray-400;
+    margin-bottom: 3px;
+    display: block;
+  }
+}
+
+@mixin brand-logo-rating-medium($self) {
+  gap: 12px;
+
+  #{$self}__logo {
+    width: 64px;
+  }
+
+  #{$self}__name {
+    @include text-md-semibold;
+    margin-bottom: 3px;
+  }
+
+  #{$self}__subtitle {
+    display: none;
+  }
+}
+
+@mixin brand-logo-rating-small($self) {
+  gap: 12px;
+
+  #{$self}__logo {
+    width: 48px;
+  }
+
+  #{$self}__name {
+    @include text-sm-semibold;
+    margin-bottom: 3px;
+  }
+
+  #{$self}__subtitle {
+    display: none;
+  }
+
+  #{$self}__value {
+    @include text-sm-semibold;
+  }
+
+  #{$self}__icons {
+    font-size: 14px;
+    letter-spacing: 3px;
+  }
+}
+
+@mixin brand-logo-rating-white-text($self) {
+  #{$self}__name, #{$self}__subtitle, #{$self}__value {
+    color: $white;
+  }
+}
+
+.brand-logo-rating {
+  $self: &;
+  display: flex;
+  align-items: center;
+  text-align: left;
+
+  &_large {
+    @include brand-logo-rating-large($self);
+  }
+
+  &_medium {
+    @include brand-logo-rating-medium($self);
+  }
+
+  &_small {
+    @include brand-logo-rating-small($self);
+  }
+
+  &_responsive {
+    @include brand-logo-rating-medium($self);
+
+    @media (min-width: $tablet) {
+      @include brand-logo-rating-large($self);
+    }
+  }
+
+  &_white-text {
+    @include brand-logo-rating-white-text($self);
+  }
+}
+
+.brand-logo-rating__name {
+  color: $black;
+}
+
+.brand-logo-rating__logo {
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: var(--site-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .image-func {
+    width: 80%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 0;
+    }
+  }
+}
+
+.brand-logo-rating__value {
+  color: $black;
+  @include text-lg-semibold;
+}
+
+.brand-logo-rating__stars {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-logo-rating__icons {
+  font-size: 24px;
+  letter-spacing: 1px;
+  margin-top: 1px;
+  --percent: calc(var(--rating));
+  --end-gradient: calc(100% - var(--percent));
+  background: linear-gradient(90deg, $warning-300 var(--percent), $gray-300 var(--end-gradient));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
