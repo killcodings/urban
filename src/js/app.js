@@ -1,4 +1,5 @@
 import '../scss/app.scss';
+// import '../../partials/gutenberg-blocks/cg-button/index';
 
 import PrimaryNav from "./primary-nav";
 import Video from "./video";
@@ -19,6 +20,7 @@ import NativeSlider from "./native-slider";
 import Popup from './popup';
 import SlidePanel from './slide-panel';
 import CopyClickButton from "./copy-click-button";
+
 
 /*
 

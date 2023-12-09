@@ -1,7 +1,12 @@
 <?php
 
-
 require_once 'helpers/language_things.php';
+
+//require_once 'partials/gutenberg-blocks/firstblock/firstblock.php';
+require_once 'src/gutenberg-blocks/firstblock/firstblock.php';
+
+require_once 'partials/gutenberg-blocks/register_wp_block_item.php';
+
 require_once 'helpers/acf.php';
 require_once 'helpers/acf-copy-select.php';
 require_once 'helpers/ajax-comments.php';
@@ -42,3 +47,12 @@ if(file_exists(WP_PLUGIN_DIR . '/Predictor/Predictor.php')) {
 include_once get_template_directory() . '/PredictorFront/PredictorFront.php';
 
 //define( 'LANG_OPTIONS', get_field('site_language', 'options') );
+
+//function register_wp_block_cg_init() {
+//	$block_directories = glob(__DIR__ . "/gutenberg-blocks/*", GLOB_ONLYDIR);
+//
+//	foreach ($block_directories as $block) {
+//		register_block_type( $block );
+//	}
+//}
+//add_action( 'init', 'register_wp_block_cg_init' );

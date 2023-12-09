@@ -4,3 +4,6 @@ src/.DS_Store
 .DS_Store
 .idea
 /DynamicSlots/
+
+/partials/gutenberg-blocks/dist/
+/partials/gutenberg-blocks/node_modules/
