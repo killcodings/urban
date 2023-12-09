@@ -32,7 +32,9 @@ import './editor.scss';
 export default function Edit() {
 	return (
 		<p { ...useBlockProps() }>
+
 			{ __( '233223', 'gutenpride' ) }
+
 		</p>
 	);
 }
