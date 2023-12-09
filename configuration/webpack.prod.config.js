@@ -29,5 +29,7 @@ module.exports = merge(webpackConfiguration, {
   },
 
   /* Additional plugins configuration */
-  plugins: [],
+  plugins: [
+    require('autoprefixer'),
+  ],
 });

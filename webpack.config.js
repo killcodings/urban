@@ -36,6 +36,9 @@ module.exports = {
         filename: 'js/[name].js',
         path: environment.paths.output,
     },
+    plugins: [
+        require('autoprefixer'),
+    ],
     module: {
         rules: [
             {

@@ -2,7 +2,6 @@
 
 require_once 'helpers/language_things.php';
 
-//require_once 'partials/gutenberg-blocks/firstblock/firstblock.php';
 require_once 'src/gutenberg-blocks/firstblock/firstblock.php';
 
 require_once 'partials/gutenberg-blocks/register_wp_block_item.php';
