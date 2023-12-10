@@ -30,9 +30,5 @@ import './editor.scss';
  * @return {Element} Element to render.
  */
 export default function Edit() {
-	return (
-		<p { ...useBlockProps() }>
-			{ __( '233223', 'gutenpride' ) }
-		</p>
-	);
+	return <p { ...useBlockProps() }>{ __( '233223', 'gutenpride' ) }</p>;
 }

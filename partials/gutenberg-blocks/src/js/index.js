@@ -1,1 +1,1 @@
-console.log("Hello wp");
+console.log( 'Hello wp' );

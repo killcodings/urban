@@ -10,8 +10,8 @@
 	"example": {},
 	"supports": {
 		"html": false,
-    "anchor": true,
-    "align": true
+		"anchor": true,
+		"align": true
 	},
 	"attributes": {
 		"content": {
@@ -26,75 +26,75 @@
 			"type": "string",
 			"default": "#ffffff"
 		},
-    "backgroundColor": {
+		"backgroundColor": {
 			"type": "string",
 			"default": "#000000"
 		},
-    "contentColorHover": {
+		"contentColorHover": {
 			"type": "string",
 			"default": "#ffffff"
 		},
-    "backgroundColorHover": {
+		"backgroundColorHover": {
 			"type": "string",
 			"default": "#000000"
 		},
-    "link": {
-      "type": "string",
-      "default": "/"
-    },
-    "targetLink": {
-      "type": "string",
-      "default": "auto"
-    },
-    "padding": {
-      "type": "object",
-      "default": {
-        "top": "15px",
-        "bottom": "15px",
-        "left": "10px",
-        "right": "10px"
-      }
-    },
-    "radius": {
-      "type": "number",
-      "default": 0
-    },
-	"justifyСontentBtn": {
-	  "type": "string",
-	  "default": "center"
-	},
-    "textAlign": {
-      "type": "string",
-      "default": "center"
-    },
-    "url": {
-      "type": "string"
-    },
-    "alt": {
-      "type": "string"
-    },
-    "mediaId": {
-      "type": "string"
-    },
-    "mediaSize": {
-      "type": "object",
-      "default": {
-        "width": 30,
-        "height": 30,
-        "gap": 10
-      }
-    },
-    "mediaPosition": {
-      "type": "string",
-      "default": "left"
-    },
-    "width": {
-      "type": "number"
-    },
-    "fontSize": {
-      "type": "number",
-      "default": 16
-    }
+		"link": {
+			"type": "string",
+			"default": "/"
+		},
+		"targetLink": {
+			"type": "string",
+			"default": "auto"
+		},
+		"padding": {
+			"type": "object",
+			"default": {
+				"top": "15px",
+				"bottom": "15px",
+				"left": "10px",
+				"right": "10px"
+			}
+		},
+		"radius": {
+			"type": "number",
+			"default": 0
+		},
+		"justifyСontentBtn": {
+			"type": "string",
+			"default": "center"
+		},
+		"textAlign": {
+			"type": "string",
+			"default": "center"
+		},
+		"url": {
+			"type": "string"
+		},
+		"alt": {
+			"type": "string"
+		},
+		"mediaId": {
+			"type": "string"
+		},
+		"mediaSize": {
+			"type": "object",
+			"default": {
+				"width": 30,
+				"height": 30,
+				"gap": 10
+			}
+		},
+		"mediaPosition": {
+			"type": "string",
+			"default": "left"
+		},
+		"width": {
+			"type": "number"
+		},
+		"fontSize": {
+			"type": "number",
+			"default": 16
+		}
 	},
 	"textdomain": "wp-block-item-button",
 	"editorScript": "file:./index.js",

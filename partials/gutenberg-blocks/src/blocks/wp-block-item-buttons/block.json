@@ -10,8 +10,8 @@
 	"example": {},
 	"supports": {
 		"html": false,
-    "anchor": true,
-    "align": true
+		"anchor": true,
+		"align": true
 	},
 	"textdomain": "wp-block-item-buttons",
 	"editorScript": "file:./index.js",

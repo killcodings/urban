@@ -31,6 +31,57 @@ add_action( 'after_setup_theme', function () {
 	add_editor_style( 'style-editor.css' );
 	add_editor_style( '/dist/css/app.css' );
 	add_editor_style( '/dist/css/critical.css' );
+	add_theme_support('align-wide');
+
+	add_theme_support("editor-color-palette", array(
+		[
+			'name' => esc_attr__('strong magenta', 'themeLangDomain'),
+			'slug' => 'strong-magenta',
+			'color' => '#a156b4',
+		],
+		[
+			'name' => esc_attr__('very light gray', 'themeLangDomain'),
+			'slug' => 'very-light-gray',
+			'color' => '#eee',
+		]
+		)
+	);
+	add_theme_support("disable-custom-colors");
+	add_theme_support('editor-gradient-presets', array(
+			[
+				'name' => esc_attr__('Red to Blue', 'themeLangDomain'),
+				'gradient' => 'linear-gradient(135deg, #e4064d 0%, #2c59ee 100%)',
+				'slug' => 'red-to-blue'
+			],
+			[
+				'name' => esc_attr__('Green to Yellow', 'themeLangDomain'),
+				'gradient' => 'linear-gradient(135deg, #3ce406 0%, #d6e029 100%)',
+				'slug' => 'green-to-yellow'
+			]
+		)
+	);
+	add_theme_support("disable-custom-gradient");
+
+	add_theme_support('editor-font-sizes', array(
+		[
+			'name' => esc_attr__('Small', 'themeLangDomain'),
+			'size' => 12,
+			'slug' => 'small'
+		],
+		[
+			'name' => esc_attr__('Regular', 'themeLangDomain'),
+			'size' => 16,
+			'slug' => 'regular'
+		],
+		[
+			'name' => esc_attr__('Large', 'themeLangDomain'),
+			'size' => 36,
+			'slug' => 'large'
+		],
+	));
+	add_theme_support("disable-custom-font-sizes");
+	add_theme_support("custom-line-height");
+	add_theme_support('custom-spacing');
 } );
 function my_acf_admin_head() {
 	app_get_partial( 'shared/root-styles' );
