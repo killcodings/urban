@@ -1,5 +1,5 @@
 {
-	"name": "block-starter-kit",
+	"name": "cg-blocks",
 	"version": "0.1.0",
 	"description": "Example block scaffolded with Create Block tool.",
 	"author": "The WordPress Contributors",
@@ -11,7 +11,7 @@
 		"lint:js": "wp-scripts lint-js",
 		"packages-update": "wp-scripts packages-update",
 		"plugin-zip": "wp-scripts plugin-zip",
-		"start": "wp-scripts start",
+		"start": "wp-scripts start --webpack-src-dir=src/blocks --output-path=dist",
 		"add": "npx @wordpress/create-block --namespace cg --category cg-blocks --variant dynamic --no-plugin",
 		"add-static": "npx @wordpress/create-block --namespace cg --category cg-blocks --no-plugin"
 	},

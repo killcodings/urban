@@ -5,7 +5,6 @@
 	"version": "0.1.0",
 	"title": "button-wp-block-item",
 	"category": "cg-blocks",
-	"icon": "button",
 	"description": "Wp block item button custom",
 	"example": {},
 	"supports": {

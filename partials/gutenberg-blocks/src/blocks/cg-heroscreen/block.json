@@ -1,19 +1,26 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "cg/gutenpride",
+	"name": "cg/heroscreen",
 	"version": "0.1.0",
-	"title": "Gutenpride",
+	"title": "Heroscreen",
 	"category": "cg-blocks",
-	"icon": "smiley",
 	"description": "Example block scaffolded with Create Block tool.",
+	"keywords": ["text", "box"],
 	"example": {},
 	"supports": {
 		"html": false
 	},
-	"textdomain": "gutenpride",
+	"textdomain": "heroscreen",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
 	"style": "file:./style-index.css",
-	"viewScript": "file:./view.js"
+	"viewScript": ["file:./view.js", "file:./view_2.js"],
+	"attributes": {
+		"text" : {
+			"type" : "string",
+			"source" : "html",
+			"selector": "div"
+		}
+	}
 }

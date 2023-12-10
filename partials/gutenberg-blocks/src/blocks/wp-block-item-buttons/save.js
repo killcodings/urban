@@ -13,7 +13,7 @@ import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#save
  *
- * @return {Element} Element to render.
+ * @return {JSX.Element} Element to render.
  */
 export default function save() {
 	return (
