@@ -19,12 +19,10 @@
         background: vars.$white;
 
         &::after {
-            //content: url(../images/content/cg-bage-icon.svg);
+            content: url(../../blocks/cg-heroscreen/cg-bage-icon.svg);
             display: inline-block;
             width: 12px;
             height: 12px;
         }
     }
-
-
 }

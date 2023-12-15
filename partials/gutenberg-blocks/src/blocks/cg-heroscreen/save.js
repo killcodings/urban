@@ -1,33 +1,40 @@
 import { useBlockProps, RichText } from '@wordpress/block-editor';
 export default function save({attributes}) {
 	const {text} = attributes;
+	const {text2} = attributes;
+	const {texth1} = attributes;
+	const {isBage} = attributes;
+	const {urlMedia} = attributes;
+	// console.log(attributes)
+	console.log("urlMedia ", urlMedia);
 	return (
-	<section className="cg-heroscreen">
+
+	<section className="cg-heroscreen" style={{"background-image": `url('${urlMedia}')`}}>
+
 		<div className="cg-bage">
 			<RichText.Content
 				{ ...useBlockProps.save() }
-				tagName ="div"
+				tagName ="p"
 				value = {text}
 			/>
 		</div>
-		<h1 className="cg-heroscreen__title cg-first-title"
-			style={{"--color": "#FFF"}}
-		>
-			Online Cricket Betting in India at Best Bookie 2022
-		</h1>
 
+		<RichText.Content
+			{ ...useBlockProps.save({
+				className: 'cg-heroscreen__title cg-first-title',
+				style: {"--color": "#FFF"}
+			}) }
+			tagName ="h1"
+			value = {texth1}
+		/>
 		<div className="cg-title-description cg-heroscreen__text"
 			 style={{"--color": "#FFF", "--text-align": "center"}}>
-			<p>If you love cricket and want to make
-				real money from your hobby,
-				join one of the
-				reliable cricket betting
-				bookmakers in India. Our website is completely dedicated to online cricket betting in India.
-				Here you will find
-				a list of the best cricket betting bookies and their mobile apps for Android and iOS.
-			</p>
+			<RichText.Content
+				{ ...useBlockProps.save() }
+				tagName ="p"
+				value = {text2}
+			/>
 		</div>
-
 		<div className="cg-heroscreen__buttons">
 			<a href="#" className="cg-button" style={{"--bg": "#FFF", "--color": "#D02E4B", "--bg-hover": "#F9FAFB"}}>
 				<span className="cg-button__text">Button 1</span>
@@ -36,7 +43,6 @@ export default function save({attributes}) {
 				<span className="cg-button__text">Button 1</span>
 			</a>
 		</div>
-
 	</section>
 	);
 }

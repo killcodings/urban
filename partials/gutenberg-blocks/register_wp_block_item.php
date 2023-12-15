@@ -33,3 +33,10 @@ function custom_block_category( $categories, $post ) {
 	);
 }
 add_filter( 'block_categories_all', 'custom_block_category', 10, 2);
+
+function blocks_enqueue_assets() {
+	wp_enqueue_script('cg-blocks-script', get_template_directory_uri() . '/partials/gutenberg-blocks/dist/blocks.js' );
+	wp_enqueue_style('cg-blocks-style', get_template_directory_uri() . '/partials/gutenberg-blocks/dist/blocks.css' );
+}
+add_action('wp_enqueue_scripts', 'blocks_enqueue_assets');
+//add_action('enqueue_block_editor_assets', 'blocks_enqueue_assets');

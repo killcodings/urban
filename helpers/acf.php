@@ -167,8 +167,8 @@ add_action( 'acf/init', function () {
 		acf_create_block( 'image', 'Изображение', 'image' );
 		acf_create_block( 'media-text', 'Текст и изображение', 'media-text', true );
 		acf_create_block( 'brand-table', 'Таблица брендов', 'brand-table' );
-		acf_create_block( 'section', 'Секция', 'section', true );
-		acf_create_block( 'hidden-text', 'Скрытый текст (FAQ)', 'hidden-text', true );
+//		acf_create_block( 'section', 'Секция', 'section', true );
+//		acf_create_block( 'hidden-text', 'Скрытый текст (FAQ)', 'hidden-text', true );
 		acf_create_block( 'single-brand', 'Блок одного бренда', 'single-brand', true );
 		acf_create_block( 'link-block', 'Блок для перелинковки', 'link-block' );
 		acf_create_block( 'howto', 'How To', 'howto' );
@@ -183,3 +183,14 @@ add_action( 'acf/init', function () {
 		acf_create_block( 'list-reviews-apps', 'List Reviews/Apps', 'list-reviews-apps' );
 	}
 } );
+
+
+
+function register_acf_blocks() {
+	register_block_type( get_template_directory() . '/partials/acf-blocks/cg-faq' );
+	register_block_type( get_template_directory() . '/partials/acf-blocks/cg-section' );
+}
+
+add_action( 'init', 'register_acf_blocks' );
+
+

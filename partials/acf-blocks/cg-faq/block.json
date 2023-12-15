@@ -1,0 +1,14 @@
+{
+  "name": "cg/hidden-text",
+  "title": "FAQ",
+  "description": "FAQ block",
+  "style": [ "file:./style.css" ],
+  "category": "cg-blocks",
+  "icon": "plus-alt2",
+  "keywords": ["testimonial", "quote"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "cg-faq-sect.php"
+  },
+  "align": "full"
+}

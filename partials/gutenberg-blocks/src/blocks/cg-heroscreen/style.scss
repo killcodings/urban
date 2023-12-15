@@ -6,7 +6,6 @@
 	//background-image: url('../images/content/cg-bg.png');
 	background-size: cover;
 	background-blend-mode: multiply;
-	background: #663a54;
 	padding: 125px 32px;
 	@include mixins.flex-column-center(0, 20px);
 	container-type: inline-size;

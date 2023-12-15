@@ -1,0 +1,14 @@
+{
+  "name": "cg/section",
+  "title": "Секция",
+  "description": "sectionBlock",
+  "style": [ "file:./style.css" ],
+  "category": "cg-blocks",
+  "icon": "block-default",
+  "keywords": ["testimonial", "quote"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "cg-section.php"
+  },
+  "align": "full"
+}

@@ -1,0 +1,35 @@
+@use '../../base/fonts';
+@use '../../base/mixins';
+
+.cg-faq {
+    padding-bottom: 25px;
+    border-bottom: 1px solid #EAECF0;
+    @include mixins.flex-column-center(0, 8px);
+    align-items: stretch;
+
+    &__title-block {
+        @include mixins.flex-center(0, 0);
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    &__title {
+        @include fonts.inter-text(var(--color), 500, normal);
+        margin: 0;
+        font-size: 18px;
+        line-height: 28px;
+    }
+
+    &__info {
+        display: none;
+
+        &_show {
+            display: block;
+        }
+    }
+
+    &__info-item {
+        @include fonts.inter-text(var(--color), 400, normal);
+        margin: 0;
+    }
+}

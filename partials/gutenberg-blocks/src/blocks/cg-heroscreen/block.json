@@ -21,6 +21,13 @@
 			"type" : "string",
 			"source" : "html",
 			"selector": "div"
+		},
+		"isBage" : {
+			"type" : "boolean",
+			"default": true
+		},
+		"urlMedia": {
+			"type": "string"
 		}
 	}
 }

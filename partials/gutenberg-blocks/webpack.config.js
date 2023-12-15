@@ -10,6 +10,6 @@ module.exports = {
 	entry: {
 		// ...defaultConfig.entry,
 		...getWebpackEntryPoints(),
-		custom: './src/js/index.js',
+		blocks: './src/js/index.js',
 	},
 };

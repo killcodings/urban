@@ -143,3 +143,8 @@ function modify_admin_comment_types_dropdown_defaults() {
 	return $comment_types;
 }
 add_filter('admin_comment_types_dropdown', 'modify_admin_comment_types_dropdown_defaults', 10, 4);
+
+add_filter( 'acf/blocks/wrap_frontend_innerblocks', 'disable_wrap_frontend_innerblocks_filter', 10, 2 );
+function disable_wrap_frontend_innerblocks_filter( ){
+	return false;
+}
