@@ -1,0 +1,14 @@
+{
+  "name": "cg/cg-welcome-sect-text",
+  "title": "Welcome-sect-text",
+  "description": "Welcome-sect-text block",
+  "style": [ "file:./style.css" ],
+  "category": "cg-blocks",
+  "icon": "block-default",
+  "keywords": ["testimonial", "quote"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "cg-welcome-sect-text.php"
+  },
+  "align": "full"
+}

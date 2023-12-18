@@ -1,0 +1,15 @@
+@use '../base/fonts';
+@use '../base/mixins';
+
+.cg-description {
+    background: red;
+
+    @include mixins.flex-column-center(0, 20px);
+    max-width: var(--max-width);
+    margin: 0 auto;
+
+    p {
+        @include fonts.inter-text (var(--color), 400, var(--text-align));
+        margin: 0;
+    }
+}

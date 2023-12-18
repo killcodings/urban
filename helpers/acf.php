@@ -180,7 +180,7 @@ add_action( 'acf/init', function () {
 		acf_create_block( 'reviews', 'Отзывы', 'reviews' );
 		acf_create_block( 'terms-list', 'Определения', 'terms-list');
 		acf_create_block( 'promocode', 'Промокод', 'promocode' );
-		acf_create_block( 'list-reviews-apps', 'List Reviews/Apps', 'list-reviews-apps' );
+//		acf_create_block( 'list-reviews-apps', 'List Reviews/Apps', 'list-reviews-apps' );
 	}
 } );
 
@@ -189,6 +189,7 @@ add_action( 'acf/init', function () {
 function register_acf_blocks() {
 	register_block_type( get_template_directory() . '/partials/acf-blocks/cg-faq' );
 	register_block_type( get_template_directory() . '/partials/acf-blocks/cg-section' );
+	register_block_type( get_template_directory() . '/partials/acf-blocks/cg-welcome-sect-text' );
 }
 
 add_action( 'init', 'register_acf_blocks' );

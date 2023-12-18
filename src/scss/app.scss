@@ -1,19 +1,26 @@
 //@use "../../partials/gutenberg-blocks/cg-button/editor";
 //@use "../../partials/gutenberg-blocks/cg-button/style";
 
-@import "base/fontello";
-@import "base/reset";
+@use '../scss/base/fonts';
+
+//@import "base/fontello";
+
 @import "base/defaults";
 @import "base/body";
 @import "base/body-changed-colors";
 @import "base/image-func";
-@import "fonts";
+
+
 
 
 // ACF Blocks
 
 @import 'acf-blocks/cg-faq-sect/cg-faq-sect';
 @import 'acf-blocks/cg-faq/cg-faq';
+
+
+// Gutenberg
+@import 'cg-description/cg-description';
 
 
 
@@ -56,8 +63,8 @@
 @import "reviews";
 @import "native-slider";
 @import "banner";
-@import "popup/popup-wrapper";
-@import "slide-panel/slide-panel";
+//@import "popup/popup-wrapper";
+//@import "slide-panel/slide-panel";
 
 
 // ACF Blocks
@@ -76,7 +83,33 @@
 @import "wpml";
 @import "rating";
 @import "acf-blocks/terms-list";
-@import "acf-blocks/app-site_list";
 @import "author-badge-top";
 
 @import "wp-block-buttons";
+
+
+body {
+  margin: 0;
+}
+
+.container {
+  max-width: 1238px;
+  padding: 48px 64px;
+  margin: 0 auto;
+
+  @media (max-width: 450px) {
+    padding: 32px 16px;
+  }
+}
+
+h1 {
+  @include fonts.title-h1 (var(--color));
+  margin: 0 auto;
+  max-width: var(--max-width);
+}
+
+h2 {
+  @include fonts.title-medium (var(--color));
+  margin: 0 auto;
+  max-width: var(--max-width);
+}

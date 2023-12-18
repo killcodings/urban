@@ -1,5 +1,5 @@
 {
-  "name": "cg/hidden-text",
+  "name": "cg/faq",
   "title": "FAQ",
   "description": "FAQ block",
   "style": [ "file:./style.css" ],

@@ -28,9 +28,9 @@ const htmlPluginEntries = templateFiles.map((template) => new HTMLWebpackPlugin(
 module.exports = {
     entry: {
         app: path.resolve(environment.paths.source, 'js', 'app.js'),
-        critical: path.resolve(environment.paths.source, 'js', 'critical.js'),
-        montserrat: path.resolve(environment.paths.source, 'js', 'montserrat-font.js'),
-        roboto: path.resolve(environment.paths.source, 'js', 'roboto-font.js'),
+        // critical: path.resolve(environment.paths.source, 'js', 'critical.js'),
+        // montserrat: path.resolve(environment.paths.source, 'js', 'montserrat-font.js'),
+        // roboto: path.resolve(environment.paths.source, 'js', 'roboto-font.js'),
     },
     output: {
         filename: 'js/[name].js',

@@ -35,7 +35,7 @@
             },
             "default_value": "",
             "maxlength": "",
-            "placeholder": "",
+            "placeholder": "FAQ",
             "prepend": "",
             "append": ""
         },
@@ -263,7 +263,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "cg\/hidden-text"
+                "value": "cg\/faq"
             }
         ]
     ],
@@ -276,5 +276,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1702653227
+    "modified": 1702907619
 }
