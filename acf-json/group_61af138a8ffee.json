@@ -91,11 +91,12 @@
                 ]
             ],
             "wrapper": {
-                "width": "50",
+                "width": "",
                 "class": "",
                 "id": ""
             },
             "return_format": "id",
+            "preview_size": "medium",
             "library": "all",
             "min_width": "",
             "min_height": "",
@@ -103,28 +104,7 @@
             "max_width": "",
             "max_height": "",
             "max_size": "",
-            "mime_types": "",
-            "preview_size": "medium"
-        },
-        {
-            "key": "field_649c37fc115c2",
-            "label": "Альтернативный текст",
-            "name": "alt",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
+            "mime_types": ""
         },
         {
             "key": "field_61b1e3216fe4d",
@@ -505,7 +485,10 @@
                         "class": "",
                         "id": ""
                     },
-                    "choices": [],
+                    "choices": {
+                        "http:\/\/localhost\/aviatoronlineorg20230912.loc\/": "Main",
+                        "http:\/\/localhost\/aviatoronlineorg20230912.loc\/aviator-game-review\/": "Parent"
+                    },
                     "default_value": false,
                     "allow_null": 0,
                     "multiple": 0,
@@ -975,72 +958,6 @@
             "ui": 0,
             "ui_on_text": "",
             "ui_off_text": ""
-        },
-        {
-            "key": "field_644bba68a117b",
-            "label": "Заголовок",
-            "name": "",
-            "aria-label": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0
-        },
-        {
-            "key": "field_644ba2ced9ad2",
-            "label": "Заголовок",
-            "name": "heading_top",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_644bc7671962b",
-            "label": "Уровень заголовка",
-            "name": "heading_level",
-            "aria-label": "",
-            "type": "select",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "h1": "H1",
-                "h2": "H2",
-                "h3": "H3",
-                "h4": "H4",
-                "h5": "H5"
-            },
-            "default_value": "h2",
-            "return_format": "value",
-            "multiple": 0,
-            "allow_null": 0,
-            "ui": 0,
-            "ajax": 0,
-            "placeholder": ""
         }
     ],
     "location": [
@@ -1048,7 +965,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/media-text"
+                "value": "cg\/media-text"
             }
         ]
     ],
@@ -1061,5 +978,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1687960356
+    "modified": 1702988661
 }

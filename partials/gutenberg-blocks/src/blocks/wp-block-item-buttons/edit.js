@@ -35,9 +35,9 @@ export default function Edit() {
 			'core/columns',
 			{},
 			[
-				[ 'core/column', {}, [ [ 'create-block/custom-button' ] ] ],
+				[ 'core/column', {}, [ [ 'cg/custom-button' ] ] ],
 
-				[ 'core/column', {}, [ [ 'create-block/custom-button' ] ] ],
+				[ 'core/column', {}, [ [ 'cg/custom-button' ] ] ],
 			],
 		],
 	];

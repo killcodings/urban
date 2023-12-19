@@ -1,0 +1,14 @@
+{
+  "name": "acf/cg-button",
+  "title": "Button",
+  "description": "Cg button",
+  "style": [ "file:./style.css" ],
+  "category": "cg-blocks",
+  "icon": "button",
+  "keywords": ["testimonial", "quote"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "cg-button.php"
+  },
+  "align": "full"
+}

@@ -20,7 +20,7 @@
 		"text" : {
 			"type" : "string",
 			"source" : "html",
-			"selector": "div"
+			"selector": "p"
 		},
 		"isBage" : {
 			"type" : "boolean",

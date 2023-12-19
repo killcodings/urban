@@ -1,0 +1,44 @@
+@use '../base/vars';
+@use '../base/mixins';
+
+.cg-sect-pic {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    container-name: cg-sect-pic;
+    container-type: inline-size;
+
+    img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+
+    &_border {
+        &:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 4px;
+            @include mixins.cg-sect-pic-border-color(var(--color));
+            bottom: 1px;
+            left: 0;
+
+            @container (max-width: 450px) {
+                height: 2px;
+                bottom: 3px;
+            }
+        }
+    }
+
+    &__logo {
+        position: absolute;
+        bottom: 18px;
+        left: 18px;
+
+        @container cg-sect-pic (max-width: 450px) {
+            bottom: 8px;
+            left: 8px;
+        }
+    }
+}

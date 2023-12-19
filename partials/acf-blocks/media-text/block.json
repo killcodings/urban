@@ -1,0 +1,14 @@
+{
+  "name": "cg/media-text",
+  "title": "media-text-title",
+  "description": "media-text-desc",
+  "style": [ "file:./style.css" ],
+  "category": "cg-blocks",
+  "icon": "plus-alt2",
+  "keywords": ["testimonial", "quote"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "media-text.php"
+  },
+  "align": "full"
+}

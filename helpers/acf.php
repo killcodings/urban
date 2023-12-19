@@ -164,8 +164,8 @@ add_action( 'acf/init', function () {
 	}
 
 	if ( function_exists( 'acf_register_block_type' ) ) {
-		acf_create_block( 'image', 'Изображение', 'image' );
-		acf_create_block( 'media-text', 'Текст и изображение', 'media-text', true );
+//		acf_create_block( 'image', 'Изображение', 'image' );
+//		acf_create_block( 'media-text', 'Текст и изображение', 'media-text', true );
 		acf_create_block( 'brand-table', 'Таблица брендов', 'brand-table' );
 //		acf_create_block( 'section', 'Секция', 'section', true );
 //		acf_create_block( 'hidden-text', 'Скрытый текст (FAQ)', 'hidden-text', true );
@@ -190,6 +190,9 @@ function register_acf_blocks() {
 	register_block_type( get_template_directory() . '/partials/acf-blocks/cg-faq' );
 	register_block_type( get_template_directory() . '/partials/acf-blocks/cg-section' );
 	register_block_type( get_template_directory() . '/partials/acf-blocks/cg-welcome-sect-text' );
+	register_block_type( get_template_directory() . '/partials/acf-blocks/media-text' );
+	register_block_type( get_template_directory() . '/partials/acf-blocks/cg-sect-pic' );
+	register_block_type( get_template_directory() . '/partials/acf-blocks/cg-button' );
 }
 
 add_action( 'init', 'register_acf_blocks' );

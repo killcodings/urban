@@ -21,6 +21,18 @@
 			"type" : "string",
 			"source" : "html",
 			"selector": "p"
+		},
+		"ColorText": {
+			"type": "string",
+			"default": "#000000"
+		},
+		"maxWidth": {
+			"type": "number",
+			"default": 754
+		},
+		"textAlign": {
+			"type": "string",
+			"default": "left"
 		}
 	}
 }

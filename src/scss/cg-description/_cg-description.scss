@@ -9,7 +9,7 @@
     margin: 0 auto;
 
     p {
-        @include fonts.inter-text (var(--color), 400, var(--text-align));
+        @include fonts.inter-text (var(--colorText), 400, var(--text-align));
         margin: 0;
     }
 }
