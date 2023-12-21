@@ -187,12 +187,14 @@ add_action( 'acf/init', function () {
 
 
 function register_acf_blocks() {
-	register_block_type( get_template_directory() . '/partials/acf-blocks/cg-faq' );
-	register_block_type( get_template_directory() . '/partials/acf-blocks/cg-section' );
-	register_block_type( get_template_directory() . '/partials/acf-blocks/cg-welcome-sect-text' );
+	register_block_type( get_template_directory() . '/partials/blocks/cg-faq' );
+	register_block_type( get_template_directory() . '/partials/blocks/cg-button' );
+	register_block_type( get_template_directory() . '/partials/blocks/cg-section' );
+	register_block_type( get_template_directory() . '/partials/blocks/cg-welcome-sect' );
+	register_block_type( get_template_directory() . '/partials/blocks/cg-sect-media' );
+
 	register_block_type( get_template_directory() . '/partials/acf-blocks/media-text' );
-	register_block_type( get_template_directory() . '/partials/acf-blocks/cg-sect-pic' );
-	register_block_type( get_template_directory() . '/partials/acf-blocks/cg-button' );
+
 }
 
 add_action( 'init', 'register_acf_blocks' );

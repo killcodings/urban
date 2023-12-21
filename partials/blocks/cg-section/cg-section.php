@@ -1,7 +1,7 @@
 <?php
 $tag            = get_field( 'section_tag' ) ?? 'section';
 $section_anchor = get_field( 'section_anchor' );
-$section_class  = 'section-tag';
+$section_class  = 'cg-section';
 $breadcrumbs_class = '';
 $opacity        = get_field('opacity') ?? '0';
 $background_image = get_field('background_image');

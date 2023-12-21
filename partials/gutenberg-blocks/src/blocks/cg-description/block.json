@@ -22,7 +22,7 @@
 			"source" : "html",
 			"selector": "p"
 		},
-		"ColorText": {
+		"сolorText": {
 			"type": "string",
 			"default": "#000000"
 		},

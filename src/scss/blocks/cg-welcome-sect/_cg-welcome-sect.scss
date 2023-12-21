@@ -1,0 +1,16 @@
+@use '../../base/fonts';
+@use '../../base/mixins';
+@use '../cg-sect-media/cg-sect-media';
+@use '../../components/cg-logo-block/cg-logo-block';
+
+.cg-welcome-sect {
+  container-type: inline-size;
+
+  &__table {
+    max-width: 754px;
+  }
+
+  &__button {
+    padding: 12px 20px;
+  }
+}

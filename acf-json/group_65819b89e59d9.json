@@ -1,6 +1,6 @@
 {
     "key": "group_65819b89e59d9",
-    "title": "Sect-pic",
+    "title": "Sect-media",
     "fields": [
         {
             "key": "field_65819cbd039ae",
@@ -22,7 +22,7 @@
         {
             "key": "field_65819b8b039ad",
             "label": "Image",
-            "name": "sect-pic-image",
+            "name": "sect_media",
             "aria-label": "",
             "type": "image",
             "instructions": "",
@@ -64,7 +64,7 @@
         {
             "key": "field_65819ce1039b0",
             "label": "Logo",
-            "name": "sect-pic-logo",
+            "name": "sect_media_logo",
             "aria-label": "",
             "type": "image",
             "instructions": "",
@@ -89,7 +89,7 @@
         {
             "key": "field_65819e4e039b1",
             "label": "Description",
-            "name": "sect-pic-logo-description",
+            "name": "sect_media_logo_description",
             "aria-label": "",
             "type": "wysiwyg",
             "instructions": "",
@@ -127,6 +127,32 @@
             "ui_off_text": ""
         },
         {
+            "key": "field_658407377b4bc",
+            "label": "Color border",
+            "name": "sect_media_color_border",
+            "aria-label": "",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_65819f51039b2",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "enable_opacity": 0,
+            "return_format": "string"
+        },
+        {
             "key": "field_65819f88039b3",
             "label": "Margin top\/bottom",
             "name": "is_margin",
@@ -152,7 +178,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "cg\/cg-sect-pic"
+                "value": "cg\/cg-sect-media"
             }
         ]
     ],
@@ -165,5 +191,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1702994796
+    "modified": 1703158023
 }

@@ -1,0 +1,11 @@
+@use '../../base/mixins';
+
+.cg-section {
+    &__content {
+        @include mixins.flex-column-center(0, 20px);
+
+        @media (max-width: 450px) {
+            row-gap: 16px;
+        }
+    }
+}

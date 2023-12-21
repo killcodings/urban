@@ -1,11 +1,11 @@
-@use '../base/vars';
-@use '../base/mixins';
+@use '../../base/vars';
+@use '../../base/mixins';
 
-.cg-sect-pic {
+.cg-sect-media {
     position: relative;
     width: 100%;
     height: 100%;
-    container-name: cg-sect-pic;
+    container-name: cg-sect-media;
     container-type: inline-size;
 
     img {
@@ -20,7 +20,7 @@
             position: absolute;
             width: 100%;
             height: 4px;
-            @include mixins.cg-sect-pic-border-color(var(--color));
+            @include mixins.cg-sect-media-border-color(var(--borderColor));
             bottom: 1px;
             left: 0;
 
@@ -36,9 +36,17 @@
         bottom: 18px;
         left: 18px;
 
-        @container cg-sect-pic (max-width: 450px) {
+        @container cg-sect-media (max-width: 450px) {
             bottom: 8px;
             left: 8px;
+        }
+    }
+
+    &_margin {
+        margin: 30px 0;
+
+        @media (max-width: 700px) {
+            margin: 11px 0;
         }
     }
 }

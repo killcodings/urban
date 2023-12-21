@@ -1,14 +1,14 @@
 {
-  "name": "cg/cg-sect-pic",
-  "title": "Sect-pic",
-  "description": "cg-sect-pic",
+  "name": "cg/cg-sect-media",
+  "title": "Sect-media",
+  "description": "cg-sect-media",
   "style": [ "file:./style.css" ],
   "category": "cg-blocks",
   "icon": "cover-image",
   "keywords": ["testimonial", "quote"],
   "acf": {
     "mode": "preview",
-    "renderTemplate": "cg-sect-pic.php"
+    "renderTemplate": "cg-sect-media.php"
   },
   "align": "full"
 }

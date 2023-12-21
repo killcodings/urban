@@ -1,4 +1,4 @@
-import { useBlockProps, RichText, InspectorControls } from '@wordpress/block-editor';
+import {useBlockProps, RichText, InspectorControls, InnerBlocks} from '@wordpress/block-editor';
 import {
 	ToolbarGroup,
 	ToolbarButton,
@@ -16,12 +16,12 @@ const { Fragment } = wp.element;
 
 export default function Edit({attributes, setAttributes}) {
 	const {text} = attributes; // {text: text} = attributes
-	const {ColorText} = attributes;
+	const {сolorText} = attributes;
 	const {maxWidth} = attributes;
 	const {textAlign} = attributes;
 
 	let componentStyles = {
-		'--colorText': ColorText,
+		'--сolorText': сolorText,
 		'--text-align': textAlign
 	};
 	if ( !! maxWidth ) {
@@ -30,7 +30,7 @@ export default function Edit({attributes, setAttributes}) {
 	const useBlockPropsAttrs = {
 		style: componentStyles,
 	};
-
+	const ALLOWED_BLOCKS = [ 'core/paragraph', { placeholder: 'paragraph'}];
 
 	return (
 		<Fragment>
@@ -40,9 +40,9 @@ export default function Edit({attributes, setAttributes}) {
 					initialOpen={ false }
 				>
 					<ColorPicker
-						color={ ColorText }
+						color={ сolorText }
 						onChange={
-							(value)=> setAttributes({ColorText: value})
+							(value)=> setAttributes({сolorText: value})
 						}
 						enableAlpha
 					/>
@@ -74,7 +74,7 @@ export default function Edit({attributes, setAttributes}) {
 							{ label: 'Справа', value: 'right' },
 						] }
 						onChange={
-							(value)=> setAttributes({maxWidth: value})
+							(value)=> setAttributes({textAlign: value})
 						}
 					/>
 				</PanelBody>
@@ -94,6 +94,7 @@ export default function Edit({attributes, setAttributes}) {
 					// allowedFormats={['core/bold']}
 					allowedFormats={[]}
 				/>
+				<InnerBlocks allowedBlocks={ ALLOWED_BLOCKS } />
 			</div>
 		</Fragment>
 	);

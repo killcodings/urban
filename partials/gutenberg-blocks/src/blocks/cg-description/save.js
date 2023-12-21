@@ -1,12 +1,12 @@
-import {RichText, useBlockProps} from '@wordpress/block-editor';
+import {RichText, useBlockProps, InnerBlocks} from '@wordpress/block-editor';
 export default function save({attributes}) {
 	const {text} = attributes;
-	const {ColorText} = attributes;
+	const {сolorText} = attributes;
 	const {maxWidth} = attributes;
 	const {textAlign} = attributes;
 
 	let componentStyles = {
-		'--colorText': ColorText,
+		'--сolorText': сolorText,
 		'--text-align': textAlign
 		// '--max-width': maxWidth
 		// padding: `${ padding.top } ${ padding.right } ${ padding.bottom } ${ padding.left }`,
@@ -33,6 +33,7 @@ export default function save({attributes}) {
 				tagName ="p"
 				value = {text}
 			/>
+			<InnerBlocks.Content/>
 		</div>
 	);
 }

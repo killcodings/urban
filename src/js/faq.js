@@ -9,7 +9,7 @@ export default class Faq {
         hiddenTextItems.forEach((item) => {
             item.addEventListener('click', function (e) {
                 console.log(e.target);
-                const itemTitle = this.querySelector('.hidden-text__title');
+                const itemTitle = this.querySelector('.cg-faq__title');
                 if (e.target === itemTitle) {
                     this.classList.toggle('cg-faq_open');
                 }

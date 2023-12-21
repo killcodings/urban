@@ -1,5 +1,7 @@
 <?php
 
+include 'Icons.php';
+
 function app_get_partial( $partial_name, $args = [] ) {
 	$partials_dir_path = 'partials';
 	get_template_part( $partials_dir_path . '/' . $partial_name, null, $args );
@@ -97,9 +99,9 @@ HTML;
 	return "";
 }
 
-function app_get_button( $button, $class = '', $relations = null, $custom_colors = null, $button_icon = false ): string {
+function app_get_button( $button, $class = '', $relations = null, $custom_colors = null, $icon_left = false, $icon_right = false ): string {
 	$partner_links_type = get_field( 'out_links_type', 'options' ) ?? 'link';
-	if ( $button['url'] === '' ) {
+	if ( $button === '' || $button['url'] === '' ) {
 		return false;
 	}
 	$button_url_parse = parse_url( $button['url'] );
@@ -117,19 +119,40 @@ function app_get_button( $button, $class = '', $relations = null, $custom_colors
 		$style_string     = "style='--background-color:{$background};--background-color-hover:{$background_hover};--color:{$color};--color-hover:{$color_hover};--border:{$border};--border-hover:{$border_hover};--border-style:{$border_style};--buttons-border-radius:{$border_radius}px'";
 	}
 
+	$icon_left_str    = '';
+	if ($icon_left) {
+		$button_icon_use = match ($icon_left) {
+			'android' => Icons::android( 'var(--buttons-color-text, #000)' ),
+			'ios' => Icons::ios( 'var(--buttons-color-text, #000)' ),
+			null => ''
+		};
+		$icon_left_str = "<span class ='button__icon'>$button_icon_use</span>";
+	}
+
+    $icon_right_str    = '';
+	if ($icon_right) {
+		$button_icon_use = match ($icon_right) {
+			'arrow' => Icons::arrowUpRight( 'var(--buttons-color-text, #000)' ),
+			null => ''
+		};
+		$icon_right_str = "<span class ='button__icon'>$button_icon_use</span>";
+	}
+
+    var_dump($icon_right_str);
+
 	$relations_string = '';
 	if ( $relations ) {
 		$relations_string .= 'rel="' . implode( ', ', $relations ) . '"';
 	}
 
 	if ( $button_url_parse['host'] === parse_url( home_url() )['host'] ) {
-		return "<a class='site-button $class' href='{$button['url']}' $style_string>$button_icon{$button['title']}</a>";
+		return "<a class='site-button $class' href='{$button['url']}' $style_string>$icon_left_str{$button['title']}$icon_right_str</a>";
 	}
 	if ( $partner_links_type === 'link' ) {
-		return "<a class='site-button $class' href='{$button['url']}' $style_string rel='nofollow'>$button_icon{$button['title']}</a>";
+		return "<a class='site-button $class' href='{$button['url']}' $style_string rel='nofollow'>$icon_left_str{$button['title']}$icon_right_str</a>";
 	}
 
-	return "<button class='site-button click-button $class' $style_string type='button' data-link='{$button['url']}'>$button_icon{$button['title']}</button>";
+	return "<button class='site-button click-button $class' $style_string type='button' data-link='{$button['url']}'>$icon_left_str{$button['title']}$icon_right_str</button>";
 }
 
 function app_get_video( $args ) {
@@ -267,31 +290,18 @@ function app_get_excerpt( $post_id, $excerpt_length = 70 ): string {
 }
 
 $is_enabled_comments_json = get_field( 'is_enabled_comments_json', 'options' );
-function app_get_comment_list( $post, $feedback = false ) {
+function app_get_comment_list( $post ) {
 	global $is_enabled_comments_json;
-
-    if ($feedback) {
-        $comments_list = get_comments( [
-            "status"       => 'approve',
-            'parent'       => 0,
-            'post_id'      => $post->ID,
-            'hierarchical' => 'threaded',
-            'type' => 'feedback_block',
-            'number'       => '10'
-        ] );
-    } else {
-        $comments_list = get_comments( [
-            "status"       => 'approve',
-            'parent'       => 0,
-            'post_id'      => $post->ID,
-            'hierarchical' => 'threaded',
-            'type' => 'comment'
-        ] );
-    }
-
+    $comments_list = get_comments( [
+        "status"       => 'approve',
+        'parent'       => 0,
+        'post_id'      => $post->ID,
+        'hierarchical' => 'threaded',
+        'type' => 'comment'
+    ] );
 
 	if ( $comments_list ): ?>
-        <div class="comments container">
+        <div class="cg-comments">
 			<?php foreach ( $comments_list as $comment ):
 				$comment_approved     = $comment->comment_approved;
 				$comment_this_post    = $comment->comment_post_ID === $post->ID;
@@ -311,89 +321,62 @@ function app_get_comment_list( $post, $feedback = false ) {
 			if ( $is_enabled_comments_json ):
 				?>
                 <script type="application/ld+json">
-                        {
-                            "@context": "https://schema.org",
-                            "@type": "Comment",
-                            "author": {
-                                "@type": "Person",
-                                "name": "<?= $comment_author ?>"
-                            },
-                            "dateCreated": "<?= $comment_ref_date ?>",
-                            "text": "<?= $comment_content ?>"
-                        }
-
-
+                    {
+                        "@context": "https://schema.org",
+                        "@type": "Comment",
+                        "author": {
+                            "@type": "Person",
+                            "name": "<?= $comment_author ?>"
+                        },
+                        "dateCreated": "<?= $comment_ref_date ?>",
+                        "text": "<?= $comment_content ?>"
+                    }
                 </script>
 			<?php endif; ?>
-                <article class="comment" id="<?= $comment_id ?>">
-                    <div class="comment__avatar"><i class="icon-user"></i></div>
-                    <div class="comment__header">
-                        <h3 class="comment__author"><?= $comment_author ?></h3>
+                <div class="cg-comments__block" id="<?= $comment_id ?>">
+                    <div class="cg-comments__pic"><i class="icon-user"></i></div>
+                    <div class="cg-comments__info">
+                        <div class="cg-post-author cg-comments__author">
+                            <p class="cg-post-author__name cg-comments__author-name"><?= $comment_author ?></p>
+                            <p class="cg-post-author__info cg-comments__author-info"><?= $comment_content ?></p>
+                            <p class="cg-update-time cg-comments__time">
+                                <time datetime="<?= $comment_date ?>" data-val="<?= $comment_ref_date ?>"><?= $comment_date ?></time>
+                            </p>
+                        </div>
+
 	                    <?php
-	                    if ( $rating = get_comment_meta($comment_id, 'rating', true) && $feedback ) { ?>
-                            <div class="comment__rating">
-			                    <?php
-			                    $rating = get_comment_meta($comment_id, 'rating', true);
-			                    $stars_rating = '';
-			                    $stars_no_rating = '';
-			                    $class = '';
-			                    for ( $j = 1; $j <= $rating; $j++ ) {
-				                    $class = 'rating-value';
-				                    $stars_rating = "<span class='dashicons $class dashicons-star-filled'></span>";
-				                    echo $stars_rating;
-			                    }
-			                    for ( $i = 1; $i <= 5 - $rating; $i++ ) {
-				                    $stars_no_rating = "<span class='dashicons dashicons-star-filled'></span>";
-				                    echo $stars_no_rating;
-			                    }
-			                    ?>
+	                    if ( $child_comments ):
+		                    $author_info = get_field( 'user_setup', 'user_' . $post->post_author );
+	                    if ( $is_enabled_comments_json ):
+		                    ?>
+                            <script type="application/ld+json">
+                                {
+                                    "@context": "https://schema.org",
+                                    "@type": "Comment",
+                                    "author": {
+                                        "@type": "Person",
+                                        "name": "<?= $comment_author ?>"
+                                    },
+                                    "dateCreated": "<?= $comment_ref_date ?>",
+                                    "text": "<?= $comment_content ?>"
+                                }
+                            </script>
+	                    <?php endif; ?>
+                            <div class="cg-post-author cg-comments__author-text" id="<?= $child_comments[0]->comment_ID ?>">
+                                <div class="cg-post-author__pic"><?= app_get_image( [ 'id' => $author_info['avatar'] ] ) ?></div>
+                                <div class="cg-post-author__info cg-comments__author">
+                                    <p class="cg-post-author__name cg-comments__author-name" style="--color: #101828;"><?= "{$author_info["name"]} {$author_info['last_name']}" ?>
+                                        <span class="cg-comments__author-name-status" style="--color: #667085;">Admin</span>
+                                    </p>
+                                    <p class="cg-post-author__info cg-comments__author-info" style="--color: #344054;"><?= $child_comments[0]->comment_content ?></p>
+                                    <p class="cg-update-time cg-comments__time">
+                                        <time datetime="<?= $child_comments[0]->comment_date ?>" data-val="<?= $comment_ref_date ?>"><?= $child_comments[0]->comment_date ?></time>
+                                    </p>
+                                </div>
                             </div>
-	                    <?php } ?>
+	                    <?php endif; ?>
                     </div>
-
-
-                    <?php if (get_comment_meta($comment_id, 'subtitle', true)) { ?>
-                    <h3 class="comment__review">Review: <?= get_comment_meta($comment_id, 'subtitle', true) ?></h3>
-                    <?php } ?>
-                    <p class="comment__content"><?= $comment_content ?></p>
-                    <span class="comment__date">
-                                <time datetime="<?= $comment_date ?>"
-                                      data-val="<?= $comment_ref_date ?>"><?= $comment_date ?></time>
-                            </span>
-                </article>
-
-
-			<?php
-			if ( $child_comments ):
-			$author_info = get_field( 'user_setup', 'user_' . $post->post_author );
-			if ( $is_enabled_comments_json ):
-			?>
-                <script type="application/ld+json">
-                        {
-                            "@context": "https://schema.org",
-                            "@type": "Comment",
-                            "author": {
-                                "@type": "Person",
-                                "name": "<?= $comment_author ?>"
-                            },
-                            "dateCreated": "<?= $comment_ref_date ?>",
-                            "text": "<?= $comment_content ?>"
-                        }
-
-                </script>
-			<?php endif; ?>
-                <article class="comment comment_child" id="<?= $child_comments[0]->comment_ID ?>">
-                    <div class="comment__avatar">
-						<?= app_get_image( [ 'id' => $author_info['avatar'] ] ) ?>
-                    </div>
-                    <h3 class="comment__author"><?= "{$author_info["name"]} {$author_info['last_name']}" ?></h3>
-                    <p class="comment__content"><?= $child_comments[0]->comment_content ?></p>
-                    <span class="comment__date">
-                                <time datetime="<?= $child_comments[0]->comment_date ?>"
-                                      data-val="<?= $comment_ref_date ?>"><?= $child_comments[0]->comment_date ?></time>
-                            </span>
-                </article>
-			<?php endif; ?>
+                </div>
 			<?php endforeach; ?>
         </div>
 	<?php endif;

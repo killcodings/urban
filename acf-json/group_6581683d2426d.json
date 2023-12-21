@@ -1,6 +1,6 @@
 {
     "key": "group_6581683d2426d",
-    "title": "Welcome-sect-text",
+    "title": "Welcome-sect",
     "fields": [
         {
             "key": "field_6581683ed16fe",
@@ -28,7 +28,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "cg\/cg-welcome-sect-text"
+                "value": "cg\/cg-welcome-sect"
             }
         ]
     ],
@@ -41,5 +41,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1702979668
+    "modified": 1703082301
 }
